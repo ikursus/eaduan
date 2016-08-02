@@ -29,50 +29,61 @@ Route::get('/login', function() {
 
 });
 
-Route::get('/dashboard', function() {
+// Halaman pengurusan admin
+Route::group( ['prefix' => 'admin'], function() {
 
-  return 'Halaman dashboard';
+  Route::get('/', function() {
 
-});
+    return redirect('http://google.com');
 
-Route::get('/staff', function() {
+  });
 
-  return 'Halaman Senarai Staff';
+  Route::get('/dashboard', function() {
 
-});
+    return 'Halaman dashboard';
 
-Route::get('/pengadu', function() {
+  });
 
-  return 'Halaman senarai pengadu';
+  Route::get('/staff', function() {
 
-});
+    return 'Halaman Senarai Staff';
 
-Route::get('/aduan', function() {
+  });
 
-  return 'Halaman senarai aduan';
+  Route::get('/pengadu', function() {
 
-});
+    return 'Halaman senarai pengadu';
 
-Route::get('/logout', function() {
+  });
 
-  return 'Halaman logout';
+  Route::get('/aduan', function() {
 
-});
+    return 'Halaman senarai aduan';
 
-Route::get('/staff/{id}', function($id) {
+  });
 
-  return 'Halaman maklumat staff ' . $id;
+  Route::get('/logout', function() {
 
-});
+    return 'Halaman logout';
 
-Route::get('/pengadu/{id}', function($id) {
+  });
 
-  return 'Halaman maklumat pengadu';
+  Route::get('/staff/{id}', function($id) {
 
-});
+    return 'Halaman maklumat staff ' . $id;
 
-Route::get('/aduan/{id}', function($id) {
+  });
 
-  return 'Halaman maklumat aduan';
+  Route::get('/pengadu/{id}', function($id) {
+
+    return 'Halaman maklumat pengadu';
+
+  });
+
+  Route::get('/aduan/{id}', function($id) {
+
+    return 'Halaman maklumat aduan';
+
+  });
 
 });
