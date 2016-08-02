@@ -7,7 +7,7 @@ Route::get('/', function() {
   //return 'Halaman Homepage';
 
   // Response return template homepage
-  // view() cari folder resources/views
+  // function view() berfungsi cari folder resources/views
   return view('homepage');
 
 });
@@ -25,8 +25,6 @@ Route::get('/terima-kasih', function() {
   return 'Halaman Terima Kasih';
 
 });
-
-// Halaman admin
 
 Route::get('/login', function() {
 
@@ -91,4 +89,4 @@ Route::group( ['prefix' => 'admin'], function() {
 
   });
 
-});
+}); // Tutup kepada Route::group()
