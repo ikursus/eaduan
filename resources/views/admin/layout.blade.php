@@ -32,7 +32,7 @@ padding: 40px 15px;
 
   <body>
 
-    @include('navigation')
+    @include('admin/navigation')
 
     <div class="container">
 

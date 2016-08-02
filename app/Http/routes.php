@@ -51,7 +51,10 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/dashboard', function() {
 
-    return 'Halaman dashboard';
+    $page_title = 'Dashboard Admin';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/dashboard', compact('page_title') );
 
   });
 
