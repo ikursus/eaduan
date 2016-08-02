@@ -3,32 +3,40 @@
 // Paparkan halaman homepage
 Route::get('/', function() {
 
+  $page_title = 'Utama';
+
   // Response return text
   //return 'Halaman Homepage';
 
   // Response return template homepage
   // function view() berfungsi cari folder resources/views
-  return view('homepage');
+  return view('homepage', compact('page_title') );
 
 });
 
 // Paparkan halaman borang aduan
 Route::get('/borang-aduan', function() {
 
-  return view('borang-aduan');
+  $page_title = 'Borang Aduan';
+
+  return view('borang-aduan', compact('page_title') );
 
 });
 
 // Paparkan halaman terima kasih
 Route::get('/terima-kasih', function() {
 
-  return 'Halaman Terima Kasih';
+  $page_title = 'Terima Kasih';
+
+  return view('terima-kasih', compact('page_title') );
 
 });
 
 Route::get('/login', function() {
 
-  return view('login');
+  $page_title = 'Login Admin';
+
+  return view('login', compact('page_title') );
 
 });
 

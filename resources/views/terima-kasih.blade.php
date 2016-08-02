@@ -2,6 +2,6 @@
 
 @section('content')
 <h1>Sistem e-Aduan</h1>
-<p class="lead">Selamat Datang Ke Sistem e-Aduan.</p>
+<p class="lead">Terima kasih kerana telah menghantar aduan.</p>
 
 @endsection
