@@ -60,19 +60,28 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/staff', function() {
 
-    return 'Halaman Senarai Staff';
+    $page_title = 'Senarai Staff';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/staff', compact('page_title') );
 
   });
 
   Route::get('/pengadu', function() {
 
-    return 'Halaman senarai pengadu';
+    $page_title = 'Senarai Pengadu';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/pengadu', compact('page_title') );
 
   });
 
   Route::get('/aduan', function() {
 
-    return 'Halaman senarai aduan';
+    $page_title = 'Senarai Aduan';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/aduan', compact('page_title') );
 
   });
 
@@ -84,19 +93,28 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/staff/{id}', function($id) {
 
-    return view('homepage', compact('id'));
+    $page_title = 'Maklumat Staff';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/staff-detail', compact('page_title') );
 
   });
 
   Route::get('/pengadu/{id}', function($id) {
 
-    return 'Halaman maklumat pengadu';
+    $page_title = 'Maklumat Pengadu';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/pengadu-detail', compact('page_title') );
 
   });
 
   Route::get('/aduan/{id}', function($id) {
 
-    return 'Halaman maklumat aduan';
+    $page_title = 'Maklumat Aduan';
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/aduan-detail', compact('page_title') );
 
   });
 
