@@ -3,14 +3,19 @@
 // Paparkan halaman homepage
 Route::get('/', function() {
 
-  return 'Halaman Homepage';
+  // Response return text
+  //return 'Halaman Homepage';
+
+  // Response return template homepage
+  // view() cari folder resources/views
+  return view('homepage');
 
 });
 
 // Paparkan halaman borang aduan
 Route::get('/borang-aduan', function() {
 
-  return 'Borang Aduan Pengguna';
+  return view('borang-aduan');
 
 });
 
@@ -25,7 +30,7 @@ Route::get('/terima-kasih', function() {
 
 Route::get('/login', function() {
 
-  return 'Halaman login';
+  return view('login');
 
 });
 
@@ -34,7 +39,7 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/', function() {
 
-    return redirect('http://google.com');
+    return redirect('/admin/dashboard');
 
   });
 
@@ -70,7 +75,7 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/staff/{id}', function($id) {
 
-    return 'Halaman maklumat staff ' . $id;
+    return view('homepage', compact('id'));
 
   });
 
