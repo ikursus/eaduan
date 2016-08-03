@@ -3,6 +3,8 @@
 @section('content')
 <h1>{{ $page_title or "" }}</h1>
 
+<a href="{{ url('admin/staff/create') }}" class="btn btn-primary">Tambah Staff</a>
+
 <div class="table-responsive">
 
 <table class="table table-bordered table-hover">
