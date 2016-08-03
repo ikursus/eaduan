@@ -1,0 +1,42 @@
+#Digunakan pada function (routes atau controller)
+view()
+Mencari template yang berada di dalam folder resources/views
+
+compact()
+Passkan variable dari function kepada template
+
+----------------------------------------------
+#Digunakan pada templating sahaja
+
+@extends()
+Panggil template utama untuk disertakan bersama dengan
+template yang dipanggil pada view()
+
+@yield()
+Membina section untuk template utama memaparkan kandungan
+yang di tetapkan pada template yang dipanggil pada view()
+
+@section()
+Memaklumkan kepada template yang dikemaskini supaya memaparkan
+kandungan pada bahagian yield() yang ditetapkan di template utama
+
+@endsection()
+Menamatkan bahagian arahan section()
+
+@include()
+Untuk kita "include" / masukkan sub-template / view ke dalam template
+utama ataupun template halaman / page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
