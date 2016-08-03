@@ -25,6 +25,7 @@ Route::group( ['prefix' => 'admin'], function() {
   Route::get('/', 'PageController@admin');
   Route::get('/dashboard', 'PageController@dashboard');
   Route::get('/staff', 'StaffController@index');
+  Route::get('/staff/create', 'StaffController@create');
   Route::get('/pengadu', 'PengaduController@index');
   Route::get('/aduan', 'AduanController@index');
   Route::get('/logout', 'AuthController@logout');

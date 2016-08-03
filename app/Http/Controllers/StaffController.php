@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Staff;
 
 class StaffController extends Controller {
 
@@ -16,8 +17,17 @@ class StaffController extends Controller {
 	{
 		$page_title = 'Senarai Staff';
 
-    // View akan cari template dashboard dalam resources/views/admin
-    return view('admin/staff', compact('page_title') );
+		// Query semua rekod dalam table staff
+		// $senarai_staff = Staff::where('email', '=', 'ali@baba.com')->take(5)->get();
+
+		// Panggil 1 row data
+		// $senarai_staff = Staff::find(1);
+		// $senarai_staff = Staff::where('email', '=', 'ahmad@albab.com')->first();
+
+		$senarai_staff = Staff::paginate(10);
+
+		// View akan cari template dashboard dalam resources/views/admin
+    return view('admin/staff', compact('page_title', 'senarai_staff') );
 	}
 
 	/**
@@ -27,7 +37,10 @@ class StaffController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$page_title = 'Tambah Staff';
+
+		// View akan cari template dashboard dalam resources/views/admin
+    return view('admin/staff-create', compact('page_title') );
 	}
 
 	/**
