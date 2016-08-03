@@ -3,7 +3,7 @@
 @section('content')
 <h1>{{ $page_title or "" }}</h1>
 
-{!! Form::open() !!}
+{!! Form::open( ['method' => 'POST', 'action' => 'StaffController@store'] ) !!}
 
 <div class="form-group">
   <label for="nama">Nama</label>
@@ -52,7 +52,7 @@
 
 
 
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
 
 {!! Form::close() !!}
 

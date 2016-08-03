@@ -48,9 +48,17 @@ class StaffController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store( Request $request )
 	{
-		//
+		// Dapatkan semua data yang dihantar dari borang
+		$inputs = $request->all();
+
+		// Simpan data ke dalam table staff
+		Staff::create( $inputs );
+
+		// Redirect ke senarai staff
+		return redirect('admin/staff');
+
 	}
 
 	/**

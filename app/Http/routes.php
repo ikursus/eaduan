@@ -22,14 +22,21 @@ Route::get('/login', 'BorangController@login');
 // Halaman pengurusan admin
 Route::group( ['prefix' => 'admin'], function() {
 
-  Route::get('/', 'PageController@admin');
-  Route::get('/dashboard', 'PageController@dashboard');
+  // Pengurusan staff
   Route::get('/staff', 'StaffController@index');
   Route::get('/staff/create', 'StaffController@create');
+  Route::post('/staff/create', 'StaffController@store');
+  Route::get('/staff/{id}', 'StaffController@show');
+
+
+  //
+  Route::get('/', 'PageController@admin');
+  Route::get('/dashboard', 'PageController@dashboard');
+
   Route::get('/pengadu', 'PengaduController@index');
   Route::get('/aduan', 'AduanController@index');
   Route::get('/logout', 'AuthController@logout');
-  Route::get('/staff/{id}', 'StaffController@show');
+
   Route::get('/pengadu/{id}', 'PengaduController@show');
   Route::get('/aduan/{id}', 'AduanController@show');
 

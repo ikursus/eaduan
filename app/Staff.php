@@ -11,6 +11,7 @@ class Staff extends Model {
 	protected $fillable = array(
 
 		'nama',
+		'password',
 		'email',
 		'tarikh_lahir',
 		'kad_pengenalan',
