@@ -17,7 +17,7 @@ class CreateStaffTable extends Migration {
 			$table->increments('id');
 			$table->string('nama');
 			$table->string('email');
-			$table->date('tarikh_lahir');
+			$table->date('tarikh_lahir')->nullable();
 			$table->string('kad_pengenalan');
 			$table->string('telefon');
 			$table->text('alamat');
