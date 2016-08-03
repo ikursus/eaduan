@@ -27,6 +27,7 @@ Route::group( ['prefix' => 'admin'], function() {
   Route::get('/staff/create', 'StaffController@create');
   Route::post('/staff/create', 'StaffController@store');
   Route::get('/staff/{id}', 'StaffController@show');
+  Route::get('/staff/{id}/delete', 'StaffController@destroy');
 
 
   //

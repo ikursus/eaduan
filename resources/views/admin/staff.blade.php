@@ -35,8 +35,23 @@
   <td>{{ $staff->role }}</td>
   <td>{{ $staff->unit }}</td>
   <td>
-    <a href="" class="btn btn-xs btn-primary">Detail</a>
-    <a href="" class="btn btn-xs btn-danger">Hapus</a>
+    <a href="{{ url('admin/staff/' . $staff->id ) }}" class="btn btn-xs btn-primary">Detail</a>
+
+    <!-- Large modal -->
+    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-{{ $staff->id }}">Hapus</button>
+
+    <div id="modal-delete-{{ $staff->id }}" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          Adakah anda bersetuju untuk hapuskan data ini?
+
+          <a href="{{ url('admin/staff/' . $staff->id . '/delete') }}" class="btn btn-xs btn-danger">Ya Setuju!</a>
+
+        </div>
+      </div>
+    </div>
+
+
   </td>
 </tr>
 @endforeach

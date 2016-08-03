@@ -2,4 +2,7 @@
 
 @section('content')
 <h1>{{ $page_title or "" }}</h1>
+
+{{ $staff->nama }}
+
 @endsection

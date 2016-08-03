@@ -71,8 +71,17 @@ class StaffController extends Controller {
 	{
 		$page_title = 'Maklumat Staff';
 
+		// Dapatkan maklumat staff berdasarkan ID
+		$staff = Staff::find($id);
+
+		$staff = Staff::where('id', '=', $id)
+		->where('email', '=', $email)
+		->orWhere()
+		->orderBy()
+		->first();
+
     // View akan cari template dashboard dalam resources/views/admin
-    return view('admin/staff-detail', compact('page_title') );
+    return view('admin/staff-detail', compact('page_title', 'staff') );
 	}
 
 	/**
@@ -105,7 +114,10 @@ class StaffController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$staff = Staff::find($id);
+		$staff->delete();
+
+		return redirect('admin/staff');
 	}
 
 }
