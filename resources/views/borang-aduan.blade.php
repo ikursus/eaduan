@@ -70,6 +70,8 @@
             {!! Form::file('lampiran', ['class' => 'form-control']) !!}
           </div>
 
+          <button type="submit" class="btn btn-primary">Hantar Aduan</button>
+
         {!! Form::close() !!}
 
       </div>

@@ -1,0 +1,20 @@
+
+
+Steps Tambah Packagist / Plugin 3rd Party
+
+1. Cari pakej yang install
+- kebiasaannya di https://packagist.org/
+- atau di github.com
+
+2. Tetapkan konfigurasi pemasangan pakej di
+composer.json yang berada di dalam direktori
+projek Laravel. Setkan di bahagian "require":
+
+3. Jalankan arahan "composer update" di terminal.
+
+4. Jika ada arahan tetapan providers atau alias
+, tetapkan di fail app.php di dalam direktori
+config.
+
+
+Contoh: https://laravelcollective.com/docs/5.0/html
