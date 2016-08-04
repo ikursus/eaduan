@@ -66,7 +66,7 @@
           </div>
 
           <div class="form-group">
-            <label for="nama">Tarikh Peristiwa</label>
+            <label for="nama">Lampiran</label>
             {!! Form::file('lampiran', ['class' => 'form-control']) !!}
           </div>
 
