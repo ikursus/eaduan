@@ -16,13 +16,14 @@
 
 Route::get('/', 'PageController@homepage');
 Route::get('/terima-kasih', 'PageController@tq');
-Route::get('/borang-aduan', 'BorangController@index');
+Route::get('/borang-aduan', 'BorangController@aduan');
+Route::get('/borang-aduan', 'BorangController@hantarAduan');
 Route::get('/login', 'BorangController@login');
 Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('/admin/logout', 'Auth\AuthController@logout');
 
 // Halaman pengurusan admin
-Route::group( ['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group( ['prefix' => 'admin', 'middleware', ''], function() {
 
   // Pengurusan staff
   Route::get('/staff', 'StaffController@index');
@@ -40,8 +41,8 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('/dashboard', 'PageController@dashboard');
 
   Route::get('/pengadu', 'PengaduController@index');
-  Route::get('/aduan', 'BorangController@aduan');
-  Route::post('/aduan', 'BorangController@hantarAduan');
+  Route::get('/aduan', 'AduanController@index');
+  Route::post('/aduan', 'AduanController@store');
 
   Route::get('/pengadu/{id}', 'PengaduController@show');
   Route::get('/aduan/{id}', 'AduanController@show');
