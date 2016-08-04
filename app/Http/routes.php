@@ -28,6 +28,8 @@ Route::group( ['prefix' => 'admin'], function() {
   Route::post('/staff/create', 'StaffController@store');
   Route::get('/staff/{id}', 'StaffController@show');
   Route::get('/staff/{id}/delete', 'StaffController@destroy');
+  Route::get('/staff/{id}/edit', 'StaffController@edit');
+  Route::patch('/staff/{id}/edit', 'StaffController@update');
 
 
   //

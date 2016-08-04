@@ -91,7 +91,16 @@ class StaffController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$page_title = 'Maklumat Staff';
+
+		// Dapatkan maklumat staff berdasarkan ID
+		$staff = Staff::find($id);
+
+		// Kaedah kedua untuk dapatkan 1 rekod
+		// $staff = Staff::where('id', '=', $id)->first();
+
+    // View akan cari template dashboard dalam resources/views/admin
+    return view('admin/staff-edit', compact('page_title', 'staff') );
 	}
 
 	/**
@@ -100,9 +109,20 @@ class StaffController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request )
 	{
-		//
+		// Dapatkan maklumat staff berdasarkan ID
+		$staff = Staff::find($id);
+
+		// Dapatkan semua data yang dihantar dari borang
+		$data = $request->all();
+
+		// Simpan data ke dalam table staff
+		$staff->update( $data );
+
+		// Redirect ke senarai staff
+		return redirect('admin/staff/' . $staff->id );
+
 	}
 
 	/**

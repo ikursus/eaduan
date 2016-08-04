@@ -38,7 +38,7 @@
   <td>{{ $staff->unit }}</td>
   <td>
     <a href="{{ url('admin/staff/' . $staff->id ) }}" class="btn btn-xs btn-primary">Detail</a>
-
+    <a href="{{ url('admin/staff/' . $staff->id . '/edit' ) }}" class="btn btn-xs btn-info">Edit</a>
     <!-- modal -->
     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-{{ $staff->id }}">Hapus</button>
 
