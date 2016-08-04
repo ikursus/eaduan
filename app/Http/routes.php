@@ -22,7 +22,7 @@ Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('/admin/logout', 'Auth\AuthController@logout');
 
 // Halaman pengurusan admin
-Route::group( ['prefix' => 'admin'], function() {
+Route::group( ['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
   // Pengurusan staff
   Route::get('/staff', 'StaffController@index');

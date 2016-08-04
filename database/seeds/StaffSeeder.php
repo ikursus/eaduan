@@ -26,7 +26,8 @@ class StaffSeeder extends Seeder {
 			'telefon' => '012-3455678',
 			'alamat' => 'No. 123, Taman Maju Jaya, 70000 Seremban.',
 			'role' => 'admin',
-			'unit' => 'umum'
+			'unit' => 'umum',
+			'remember_token' => ''
 		]);
 
 		// Staff 2
@@ -39,7 +40,8 @@ class StaffSeeder extends Seeder {
 			'telefon' => '012-8765432',
 			'alamat' => 'No. 123, Taman Sentiasa Maju, 70000 Seremban.',
 			'role' => 'user',
-			'unit' => 'kewangan'
+			'unit' => 'kewangan',
+			'remember_token' => ''
 		]);
 
 	}

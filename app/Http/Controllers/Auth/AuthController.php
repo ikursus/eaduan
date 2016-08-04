@@ -39,7 +39,7 @@ class AuthController extends Controller {
 	// 	$this->middleware('guest', ['except' => 'getLogout']);
 	// }
 
-	public function authenticate ( Request $request )
+	public function authenticate( Request $request )
 	{
 		if ( Auth::attempt( ['email' => $request->input('email'), 'password' => $request->input('password') ] ) )
 		{
@@ -47,7 +47,7 @@ class AuthController extends Controller {
 
 			return redirect()->intended('admin');
 		}
-
+		// Jika tak berjaya, redirect kembali ke halaman sebelum
 		return redirect()->back()->with('error', 'Login tak sah!');
 	}
 
@@ -58,7 +58,7 @@ class AuthController extends Controller {
 		{
 			Auth::logout();
 		}
-		
+
 		return redirect('login');
 	}
 
