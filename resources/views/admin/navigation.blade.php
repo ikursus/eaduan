@@ -12,10 +12,10 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="./">Dashboard</a></li>
-        <li><a href="./staff">Senarai Staff</a></li>
-        <li><a href="./pengadu">Senarai Pengadu</a></li>
-        <li><a href="./aduan">Senarai Aduan</a></li>
-        <li><a href="./logout">Logout</a></li>
+        <li><a href="{{ url('admin/staff') }}">Senarai Staff</a></li>
+        <li><a href="{{ url('admin/pengadu') }}">Senarai Pengadu</a></li>
+        <li><a href="{{ url('admin/aduan') }}">Senarai Aduan</a></li>
+        <li><a href="{{ url('admin/logout') }}">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

@@ -32,12 +32,13 @@ Route::group( ['prefix' => 'admin'], function() {
   Route::patch('/staff/{id}/edit', 'StaffController@update');
 
 
+
   //
   Route::get('/', 'PageController@admin');
   Route::get('/dashboard', 'PageController@dashboard');
 
   Route::get('/pengadu', 'PengaduController@index');
-  Route::get('/aduan', 'AduanController@index');
+  Route::get('/aduan', 'BorangController@aduan');
   Route::get('/logout', 'AuthController@logout');
 
   Route::get('/pengadu/{id}', 'PengaduController@show');

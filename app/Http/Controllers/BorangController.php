@@ -31,9 +31,11 @@ class BorangController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function aduan()
 	{
-		//
+		$page_title = 'Borang Aduan';
+
+		return view('borang-aduan', compact('page_title'));
 	}
 
 	/**
