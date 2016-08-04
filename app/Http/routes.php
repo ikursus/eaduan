@@ -41,7 +41,10 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth' ], function() {
   Route::get('/dashboard', 'PageController@dashboard');
 
   Route::get('/pengadu', 'PengaduController@index');
+
+
   Route::get('/aduan', 'AduanController@index');
+  
   Route::post('/aduan', 'AduanController@store');
 
   Route::get('/pengadu/{id}', 'PengaduController@show');

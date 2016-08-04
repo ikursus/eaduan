@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Pengadu;
 
 class PengaduController extends Controller {
 
@@ -16,8 +17,11 @@ class PengaduController extends Controller {
 	{
 		$page_title = 'Senarai Pengadu';
 
+		// Paparkan data semaksimum 10 rekod sahaja untuk 1 halaman
+		$senarai_pengadu = Pengadu::paginate(10);
+
     // View akan cari template dashboard dalam resources/views/admin
-    return view('admin/pengadu', compact('page_title') );
+    return view('admin/pengadu', compact('page_title', 'senarai_pengadu') );
 	}
 
 	/**
