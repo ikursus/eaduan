@@ -11,6 +11,7 @@
 
 <thead>
   <tr class="active">
+    <th></th>
     <th>ID</th>
     <th>Nama</th>
     <th>Email</th>
@@ -26,6 +27,7 @@
 
 @foreach( $senarai_staff as $staff )
 <tr>
+  <td> {!! Form::checkbox('id', $staff->id, false) !!}  </td>
   <td>{{ $staff->id }}</td>
   <td>{{ $staff->nama }}</td>
   <td>{{ $staff->email }}</td>

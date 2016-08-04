@@ -53,10 +53,10 @@ class StaffController extends Controller {
 	public function store( Request $request )
 	{
 		// Dapatkan semua data yang dihantar dari borang
-		$inputs = $request->all();
+		$data = $request->all();
 
 		// Simpan data ke dalam table staff
-		Staff::create( $inputs );
+		Staff::create( $data );
 
 		// Redirect ke senarai staff
 		return redirect('admin/staff');
@@ -76,11 +76,8 @@ class StaffController extends Controller {
 		// Dapatkan maklumat staff berdasarkan ID
 		$staff = Staff::find($id);
 
-		$staff = Staff::where('id', '=', $id)
-		->where('email', '=', $email)
-		->orWhere()
-		->orderBy()
-		->first();
+		// Kaedah kedua untuk dapatkan 1 rekod
+		// $staff = Staff::where('id', '=', $id)->first();
 
     // View akan cari template dashboard dalam resources/views/admin
     return view('admin/staff-detail', compact('page_title', 'staff') );
