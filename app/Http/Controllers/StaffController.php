@@ -19,11 +19,13 @@ class StaffController extends Controller {
 
 		// Query semua rekod dalam table staff
 		// $senarai_staff = Staff::where('email', '=', 'ali@baba.com')->take(5)->get();
+		// $senarai_staff = Staff::all();
 
 		// Panggil 1 row data
 		// $senarai_staff = Staff::find(1);
 		// $senarai_staff = Staff::where('email', '=', 'ahmad@albab.com')->first();
 
+		// Paparkan data semaksimum 10 rekod sahaja untuk 1 halaman
 		$senarai_staff = Staff::paginate(10);
 
 		// View akan cari template dashboard dalam resources/views/admin
