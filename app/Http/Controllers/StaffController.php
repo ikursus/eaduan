@@ -113,9 +113,13 @@ class StaffController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		// Dapatkan maklumat staff berdasarkan ID
 		$staff = Staff::find($id);
+
+		// Hapuskan rekod daripada database
 		$staff->delete();
 
+		// Redirect user ke senarai staff semula
 		return redirect('admin/staff');
 	}
 
