@@ -43,7 +43,7 @@ class BorangController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function hantarAduan( Request $request )
 	{
 		//
 	}

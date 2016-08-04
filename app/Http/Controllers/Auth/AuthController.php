@@ -41,10 +41,14 @@ class AuthController extends Controller {
 
 	public function authenticate( Request $request )
 	{
-		if ( Auth::attempt( ['email' => $request->input('email'), 'password' => $request->input('password') ] ) )
+		$email = $request->input('email');
+		$password = $request->input('password');
+
+		if ( Auth::attempt( ['email' => $email, 'password' => $password ] ) )
 		{
 			$user = Auth::user();
 
+			// Jika berjaya login, redirect ke panel admin
 			return redirect()->intended('admin');
 		}
 		// Jika tak berjaya, redirect kembali ke halaman sebelum

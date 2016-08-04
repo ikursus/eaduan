@@ -17,7 +17,7 @@
 Route::get('/', 'PageController@homepage');
 Route::get('/terima-kasih', 'PageController@tq');
 Route::get('/borang-aduan', 'BorangController@aduan');
-Route::get('/borang-aduan', 'BorangController@hantarAduan');
+Route::post('/borang-aduan', 'BorangController@hantarAduan');
 Route::get('/login', 'BorangController@login');
 Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('/admin/logout', 'Auth\AuthController@logout');
