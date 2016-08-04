@@ -19,7 +19,7 @@ Route::get('/terima-kasih', 'PageController@tq');
 Route::get('/borang-aduan', 'BorangController@index');
 Route::get('/login', 'BorangController@login');
 Route::post('/login', 'Auth\AuthController@authenticate');
-Route::get('/logout', 'Auth\AuthController@logout');
+Route::get('/admin/logout', 'Auth\AuthController@logout');
 
 // Halaman pengurusan admin
 Route::group( ['prefix' => 'admin'], function() {
