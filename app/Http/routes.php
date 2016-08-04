@@ -18,6 +18,8 @@ Route::get('/', 'PageController@homepage');
 Route::get('/terima-kasih', 'PageController@tq');
 Route::get('/borang-aduan', 'BorangController@index');
 Route::get('/login', 'BorangController@login');
+Route::post('/login', 'Auth\AuthController@authenticate');
+Route::get('/logout', 'Auth\AuthController@logout');
 
 // Halaman pengurusan admin
 Route::group( ['prefix' => 'admin'], function() {
@@ -39,7 +41,7 @@ Route::group( ['prefix' => 'admin'], function() {
 
   Route::get('/pengadu', 'PengaduController@index');
   Route::get('/aduan', 'BorangController@aduan');
-  Route::get('/logout', 'AuthController@logout');
+  Route::post('/aduan', 'BorangController@hantarAduan');
 
   Route::get('/pengadu/{id}', 'PengaduController@show');
   Route::get('/aduan/{id}', 'AduanController@show');

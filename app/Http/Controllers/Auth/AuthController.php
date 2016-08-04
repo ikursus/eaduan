@@ -1,9 +1,13 @@
 <?php namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+// use App\Http\Controllers\Controller;
+// use Illuminate\Contracts\Auth\Guard;
+// use Illuminate\Contracts\Auth\Registrar;
+// use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Auth;
+use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
+
 
 class AuthController extends Controller {
 
@@ -18,7 +22,7 @@ class AuthController extends Controller {
 	|
 	*/
 
-	use AuthenticatesAndRegistersUsers;
+	// use AuthenticatesAndRegistersUsers;
 
 	/**
 	 * Create a new authentication controller instance.
@@ -27,16 +31,34 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
-	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
+	// public function __construct(Guard $auth, Registrar $registrar)
+	// {
+	// 	$this->auth = $auth;
+	// 	$this->registrar = $registrar;
+	//
+	// 	$this->middleware('guest', ['except' => 'getLogout']);
+	// }
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+	public function authenticate ( Request $request )
+	{
+		if ( Auth::attempt( ['email' => $request->input('email'), 'password' => $request->input('password') ] ) )
+		{
+			$user = Auth::user();
+
+			return redirect()->intended('admin');
+		}
+
+		return redirect()->back()->with('error', 'Login tak sah!');
 	}
 
 	public function logout()
 	{
+
+		if( Auth::check() )
+		{
+			Auth::logout();
+		}
+		
 		return redirect('login');
 	}
 
